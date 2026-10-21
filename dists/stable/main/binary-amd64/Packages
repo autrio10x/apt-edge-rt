@@ -1,0 +1,15 @@
+Package: keystone
+Architecture: amd64
+Version: 0.1.2
+Priority: optional
+Section: utils
+Maintainer: Autrio <eng@autrio.io>
+Filename: pool/main/k/keystone/keystone_0.1.2_amd64.deb
+Size: 3585080
+MD5sum: b621897086c31252c809e2736c987749
+SHA1: 819244693adddd91356ac67612a8c77643960d71
+SHA256: 19401dcdcc9b992163016b07c8e66940eaa1654d2416d8d46bcfbdcc20a6c936
+SHA512: ee725bfccd77c408e49ad1ca2c438bd0d6aee4780266915c71df8f3a7c92b8c23d360f5b83ffed1af4a0bf33eff33caf919e5ae54d1b3378e79de141f12f2432
+Description: Keystone host authority daemon (Autrio device edge)
+ Long-lived device daemon: Autrio join, KeyStore, Runtime API, supervisor.
+

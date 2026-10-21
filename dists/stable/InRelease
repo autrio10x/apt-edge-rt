@@ -1,0 +1,42 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Architectures: amd64
+Codename: stable
+Components: main
+Date: Wed, 21 Oct 2026 09:32:45 +0000
+Label: Keystone
+Origin: Autrio
+Suite: stable
+MD5Sum:
+ 03bfcbcea255f8da9cbcf589dbb0235b              138 Release
+ bd3a2c85221e6e91fe14c5ef6d6de8b5              631 main/binary-amd64/Packages
+ 68eda23fafde921354be47117e11c75a              450 main/binary-amd64/Packages.gz
+SHA1:
+ 0f6e1f33d9c215788a0e01203c3b90b948f45fef              138 Release
+ adda4f97acfbef8e9939692bb87823126edf699d              631 main/binary-amd64/Packages
+ 1df5ef477439fe3a64acd2810bb617a9d8275350              450 main/binary-amd64/Packages.gz
+SHA256:
+ a9e7b0dbb653b9791896c4a23bc9f4da8c3a4e39bed26d1285fbe4360383ed81              138 Release
+ 89b514d52ef6a20bb862a7d4bf4b4fdcf582298dec11da5decd1e4f981b75230              631 main/binary-amd64/Packages
+ 0fe11b4a3d25065817d5b4f57ede0e13581417a083c78c21754d9fb79afd5d84              450 main/binary-amd64/Packages.gz
+SHA512:
+ 748d137f21f806e2cb498307d635324ce0c6f5b4d3d69d7e56bcde266eca52d133e0d8894b5189a83b2d24c5d1a0f3b4179cb939234c8c065dc88f4701e8a1ad              138 Release
+ a28e7c33a0db884c2f08b48522ea059189bb461d3da48d3c775528e531bd57aefe954f003912424b3b13fdca2602a94af7b40c1a6529534de56c172dcaf0d567              631 main/binary-amd64/Packages
+ 2c4bd8cd1a7610e3c138a797cb39557df2bee75a07b21795331a85db7c24a129198daaee0e693a42af4085efaf0b3f3b7f4b5d0a900a8db59f5fe432e852745d              450 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEGOQjYzSg07/Ka3LrCGTaq8zWcH8FAmrYhr0ACgkQCGTaq8zW
+cH85sQ//SN1F2bIlL3ca92VU165nSpTUg+CoguGIflvGQ6XHD9Qv1xcHYkhOyUcw
+j23F3cGlLGE43phpr01EtAX1mYubRQrH1ImL/UM/CHQ7xeHoGTOA0+/hqdRUkZ3d
+M3EjUOu9OZWuqWsPI/r1tA0dWEQEZPhIb0nfk0/xYnuA6vu4t5S7YE62E0bQQiW6
+LpTF0xuv+X5DX3voV1rFSCqeB+cR9F5+SbqxlE/7qsToHji4UNes3hZ2vcV0b5rv
+Lux9rQfUUaAieQYKOV8DPLe/rmR8OtuB2Ao+9Hi4jvKAoTDPfSXyNQW+MhyKQMgY
+iAOzn/1d38Ym7758EgvzncCNAMe0XFNl88x9iD2OloJAgR0Amqg0diiOOD78Hr26
+ZqiPvl899zsFZIx6tb2AQ+8VwM+eXcr8udjdUEf9VTibkSarSW16Touu1i2s7D/0
+AdDtXSW42FZJV1pAvJfq17lqvBH0v9OVMUPz3QQxAMnb9LQa0ImJ5OvS0IWX0knB
+Lvvz9UfO/pgbH9v7JV20mPwSLC0NU3Av9fVdmcG9a1kZWZWYTiH49NGVoLVWFZC1
+9d6qGR27dEhCPM0NHC6FutN/7yjt/zf6GyViyKa9S4cnXgrapXsDlwjpdbW9SA7x
+YmqVKwMoOhMyNAcnvVTXI3lMD6oTS0KgTEJRuXs3XGqNp2GMaVg=
+=3lCu
+-----END PGP SIGNATURE-----
