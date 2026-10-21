@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>apt-edge-rt</title>
+</head>
+<body>
+  <h1>apt-edge-rt</h1>
+  <p>Public apt archive for Keystone.</p>
+  <pre>sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://autrio10x.github.io/apt-edge-rt/keystone.gpg \
+  | sudo tee /etc/apt/keyrings/keystone.gpg &gt;/dev/null
+echo "deb [signed-by=/etc/apt/keyrings/keystone.gpg] https://autrio10x.github.io/apt-edge-rt stable main" \
+  | sudo tee /etc/apt/sources.list.d/keystone.list
+sudo apt update
+sudo apt install keystone</pre>
+</body>
+</html>
