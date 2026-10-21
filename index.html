@@ -2,17 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>apt-edge-rt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keystone apt archive</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f1ea;
+      --ink: #1c1916;
+      --muted: #5c564e;
+      --card: #fffdf8;
+      --line: #d9d2c5;
+      --accent: #1f4d3a;
+      --code: #f0ebe1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    main {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    h1 { font-size: 1.85rem; margin: 0 0 0.25rem; }
+    h2 { font-size: 1.15rem; margin: 2rem 0 0.6rem; }
+    p, li { color: var(--ink); }
+    .lede { color: var(--muted); margin: 0 0 1.5rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      margin: 0.75rem 0;
+    }
+    ol { margin: 0; padding-left: 1.2rem; }
+    li + li { margin-top: 0.85rem; }
+    pre {
+      margin: 0.45rem 0 0;
+      padding: 0.75rem 0.85rem;
+      background: var(--code);
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.82rem;
+    }
+    a { color: var(--accent); }
+    .note { color: var(--muted); font-size: 0.95rem; }
+    footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.9rem; }
+  </style>
 </head>
 <body>
-  <h1>apt-edge-rt</h1>
-  <p>Public apt archive for Keystone.</p>
-  <pre>sudo mkdir -p /etc/apt/keyrings
+  <main>
+    <h1>Keystone</h1>
+    <p class="lede">Public apt archive. Install the daemon on an ABOX or other Ubuntu host. Source stays in the private keystone repo.</p>
+
+    <div class="card">
+      <strong>Current package</strong>
+      <p class="note" style="margin: 0.35rem 0 0;">keystone 0.1.2 · amd64 · suite <code>stable</code></p>
+    </div>
+
+    <h2>Install</h2>
+    <div class="card">
+      <ol>
+        <li>
+          Add the archive (once per machine).
+          <pre>sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://autrio10x.github.io/apt-edge-rt/keystone.gpg \
-  | sudo tee /etc/apt/keyrings/keystone.gpg &gt;/dev/null
+  | sudo tee /etc/apt/keyrings/keystone.gpg >/dev/null
 echo "deb [signed-by=/etc/apt/keyrings/keystone.gpg] https://autrio10x.github.io/apt-edge-rt stable main" \
-  | sudo tee /etc/apt/sources.list.d/keystone.list
-sudo apt update
+  | sudo tee /etc/apt/sources.list.d/keystone.list</pre>
+        </li>
+        <li>
+          Install the package. On an ABOX-5210G with a TPM the vault is <code>tpm2</code>. If that TPM device is missing, install fails.
+          <pre>sudo apt update
 sudo apt install keystone</pre>
+        </li>
+        <li>
+          Fill identity, then start. Leave this file empty and the service will restart in a loop.
+          <pre>sudo nano /etc/keystone/keystone.toml
+sudo systemctl enable --now keystone
+keystone status</pre>
+        </li>
+      </ol>
+    </div>
+
+    <h2>Identity file</h2>
+    <div class="card">
+      <p class="note" style="margin-top: 0;">Ops supplies these four values. They are not in the package.</p>
+      <pre>autrio_url = "…"
+tenant_key = "…"
+serial = "…"
+birth_secret = "…"</pre>
+    </div>
+
+    <h2>Check</h2>
+    <div class="card">
+      <pre>keystone --version
+keystone status</pre>
+      <p class="note"><code>keystone status</code> should show <code>layout: package</code>, <code>running: yes</code>, and on an ABOX <code>keystore: tpm2</code>.</p>
+    </div>
+
+    <h2>Upgrade</h2>
+    <div class="card">
+      <pre>sudo apt update
+sudo apt install --only-upgrade keystone</pre>
+      <p class="note" style="margin-bottom: 0;">The identity file is kept.</p>
+    </div>
+
+    <footer>
+      Archive: <a href="https://github.com/autrio10x/apt-edge-rt">autrio10x/apt-edge-rt</a>
+      · Key: <a href="keystone.gpg">keystone.gpg</a>
+      · Index: <a href="dists/stable/InRelease">dists/stable/InRelease</a>
+    </footer>
+  </main>
 </body>
 </html>
