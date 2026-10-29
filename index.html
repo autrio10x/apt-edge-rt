@@ -73,7 +73,7 @@
           <pre>sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://autrio10x.github.io/apt-edge-rt/keystone.gpg \
   | sudo tee /etc/apt/keyrings/keystone.gpg >/dev/null
-echo "deb [signed-by=/etc/apt/keyrings/keystone.gpg] https://autrio10x.github.io/apt-edge-rt stable main" \
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/keystone.gpg] https://autrio10x.github.io/apt-edge-rt stable main" \
   | sudo tee /etc/apt/sources.list.d/keystone.list
 sudo tee /etc/apt/preferences.d/keystone-autrio >/dev/null <<'EOF'
 Package: keystone
