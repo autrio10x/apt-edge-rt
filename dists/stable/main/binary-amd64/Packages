@@ -13,3 +13,18 @@ SHA512: e1ec264654c01bf72319cd72b270623d24eb0d4ffe090683809d49c38263ba3c2a783766
 Description: Keystone host authority daemon (Autrio device edge)
  Long-lived device daemon: Autrio join, KeyStore, Runtime API, supervisor.
 
+Package: keystone
+Architecture: amd64
+Version: 0.1.3
+Priority: optional
+Section: utils
+Maintainer: Autrio <eng@autrio.io>
+Filename: pool/main/k/keystone/keystone_0.1.3_amd64.deb
+Size: 3619572
+MD5sum: 0ed328fbf990b9d1b87a6fead6cc7731
+SHA1: a28e0af84632b0cd872615a34cb5173aa125c894
+SHA256: eb402ee4f1d8d4c16e6fe86810e1268c86c8bf83855612ebe8aacd267ef41806
+SHA512: dca7d74d638f6c3b53026defe7783be6633a4c57bb35bc17d23264f83a366421de279a3f576e6824b1f7cf20aec6f5cf7340365a787f726301913d3986ca509b
+Description: Keystone host authority daemon (Autrio device edge)
+ Long-lived device daemon: Autrio join, KeyStore, Runtime API, supervisor.
+
