@@ -69,15 +69,20 @@
     <div class="card">
       <ol>
         <li>
-          Add the archive (once per machine).
+          Add the archive (once per machine). Ubuntu already has an OpenStack package named <code>keystone</code>. Pin this archive so apt does not pick that one, and so upgrades are not stuck on an old Autrio version.
           <pre>sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://autrio10x.github.io/apt-edge-rt/keystone.gpg \
   | sudo tee /etc/apt/keyrings/keystone.gpg >/dev/null
 echo "deb [signed-by=/etc/apt/keyrings/keystone.gpg] https://autrio10x.github.io/apt-edge-rt stable main" \
-  | sudo tee /etc/apt/sources.list.d/keystone.list</pre>
+  | sudo tee /etc/apt/sources.list.d/keystone.list
+sudo tee /etc/apt/preferences.d/keystone-autrio >/dev/null <<'EOF'
+Package: keystone
+Pin: origin autrio10x.github.io
+Pin-Priority: 1001
+EOF</pre>
         </li>
         <li>
-          Install the package. On an ABOX-5210G with a TPM the vault is <code>tpm2</code>. If that TPM device is missing, install fails.
+          Refresh the index, then install. On an ABOX-5210G with a TPM the vault is <code>tpm2</code>. If that TPM device is missing, install fails.
           <pre>sudo apt update
 sudo apt install keystone</pre>
         </li>
@@ -109,8 +114,8 @@ keystone status</pre>
     <h2>Upgrade</h2>
     <div class="card">
       <pre>sudo apt update
-sudo apt install --only-upgrade keystone</pre>
-      <p class="note" style="margin-bottom: 0;">The identity file is kept.</p>
+sudo apt install keystone</pre>
+      <p class="note" style="margin-bottom: 0;">The identity file is kept. If a pin file still says <code>Pin: version 0.1.2</code>, replace it with the origin pin above, then run these two commands again.</p>
     </div>
 
     <footer>
